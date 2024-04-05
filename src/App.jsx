@@ -6,6 +6,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Safaera from './pages/Safaera'
 import Discoteca from './pages/Discoteca'
+import Confirmacion from './pages/Confirmacion'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/safaera' element={<Safaera />} />
           <Route path='/discoteca' element={<Discoteca />} />
-          {/* <Route path='/confirmacion' element={<Confirmacion />} /> */}
+          <Route path='/confirmacion' element={<Confirmacion />} />
         </Routes>
       </HashRouter>
 

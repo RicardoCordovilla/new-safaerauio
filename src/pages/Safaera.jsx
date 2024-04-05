@@ -12,8 +12,8 @@ const Safaera = () => {
                     <i className="bx bx-arrow-back"></i>
                 </a>
             </nav>
-
             <ImagesTransition />
+
             <header>
                 <figure className="figura" id="logohead">
                     <img src="/images/logos/safaera_logo.png" alt="" className="logo" />

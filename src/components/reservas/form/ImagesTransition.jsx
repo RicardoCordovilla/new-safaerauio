@@ -6,20 +6,16 @@ import useFetch from '../../../utils/useFetch'
 const ImagesTransition = () => {
 
     const [data, loading, error, fetch] = useFetch()
+    const [imageIndex, setImageIndex] = useState(0)
 
     const [images, setImages] = useState([])
 
 
     const formatImageUrl = (url) => {
-        const newUrl = url.replace(
-            "https://drive.usercontent.google.com/download?id=",
-            "https://lh3.googleusercontent.com/d/",
-        );
+        // extract de id from the url
+        const id = url.split("/")[5]
+        const newUrl = `https://lh3.googleusercontent.com/d/${id}`
         return newUrl
-        // image = imageFetch.replace(
-        //     "https://drive.usercontent.google.com/download?id=",
-        //     "https://lh3.googleusercontent.com/d/",
-        // );
     }
 
     const formatImages = (images) => {
@@ -38,22 +34,31 @@ const ImagesTransition = () => {
         if (!data) return
         // setImages(response?.images.form)
         setImages(formatImages(response?.images?.form))
-        // console.log(images)
+        console.log(images)
     }, [data])
 
     const transitionImages = () => {
-        let i = 0
-        setInterval(() => {
-            if (i < images.length) {
-                i++
-            } else {
-                i = 0
-            }
-        }, 3000)
-        return <span
-            className='imagesTransition'
-        ><img src={images[i]} alt="" className='image' /></span>
+        if (images.length === 0) return
+        return (
+            <div className="imageBx">
+                <img src={images[imageIndex]} alt="form"
+                    className='image'
+                />
+            </div>
+        )
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setImageIndex((prev) => {
+                if (prev === images.length - 1) {
+                    return 0
+                }
+                return prev + 1
+            })
+        }, 1000)
+        return () => clearInterval(interval)
+    }, [images])
 
 
 

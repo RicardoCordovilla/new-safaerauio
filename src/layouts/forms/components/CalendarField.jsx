@@ -64,7 +64,7 @@ const CalendarField = ({ fecha, setFecha }) => {
         if (date.selectable) {
             return (
                 // change color of enabled dates with contrast color
-                <div style={{ border: '1px solid var(--color-cyan)', borderRadius: '6px', width: '2em', height: '2em', lineHeight: '2em', color: 'var(---color-cyan)' }}>{date.day}</div>
+                <div style={{ border: '1px solid var(--color-cyan)', borderRadius: '2px', width: '2em', height: '2em', lineHeight: '2em', color: 'var(---color-cyan)' }}>{date.day}</div>
             );
         }
 
