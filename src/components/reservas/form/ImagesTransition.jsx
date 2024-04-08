@@ -3,6 +3,8 @@ import { API_METHODS } from '../../../utils/configs'
 import './ImagesTransition.styles.css'
 import useFetch from '../../../utils/useFetch'
 
+import { motion, AnimatePresence } from "framer-motion"
+
 const ImagesTransition = () => {
 
     const [data, loading, error, fetch] = useFetch()
@@ -41,8 +43,13 @@ const ImagesTransition = () => {
         if (images.length === 0) return
         return (
             <div className="imageBx">
-                <img src={images[imageIndex]} alt="form"
+                <motion.img src={images[imageIndex]} alt="form"
                     className='image'
+                    key={imageIndex}
+                    initial={{ opacity: 0, x: 600 }}
+                    animate={{ opacity: 1, x: -150 }}
+                    exit={{ opacity: 1, x: 500 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
             </div>
         )
@@ -56,7 +63,7 @@ const ImagesTransition = () => {
                 }
                 return prev + 1
             })
-        }, 1000)
+        }, 2000)
         return () => clearInterval(interval)
     }, [images])
 
@@ -64,6 +71,7 @@ const ImagesTransition = () => {
 
     return (
         <div className="imagesContainer">
+
             {
                 transitionImages()
             }

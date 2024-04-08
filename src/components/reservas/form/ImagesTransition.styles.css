@@ -1,5 +1,5 @@
-.imagesContainer{
-    position:absolute;
+.imagesContainer {
+    position: absolute;
     margin-top: -10rem;
     /* background-color: aqua; */
     height: fit-content;
@@ -8,17 +8,17 @@
     opacity: 0.8;
 }
 
-.imageBx{
+.imageBx {
     /* width: ; */
     height: fit-content;
     /* background-color: black; */
     overflow: hidden;
 }
 
-.image{
-    height: 600px;
+.image {
+    height: 500px;
     width: auto;
-    transform: translateX(-30%);
-    opacity: 0.6;
+    /* transform: translateX(-500px); */
+    opacity: 0.5;
+    mask-image: linear-gradient(black 80%, transparent);
 }
-
