@@ -90,7 +90,7 @@ const CalendarField = ({ fecha, setFecha }) => {
                 // disabledDates={disabledDates}
                 dateTemplate={dateTemplate}
                 disabled={loding}
-                maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
+                // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
 
             />
             {/* {getFormErrorMessage('fecha')} */}
