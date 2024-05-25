@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FooterLayout from '../layouts/FooterLayout'
 import axios from 'axios'
 import { API_METHODS } from '../utils/configs'
+import { motion } from 'framer-motion'
 
 import "../styles/global.css";
 import "../styles/discoteca.css";
@@ -39,7 +40,12 @@ const Discoteca = () => {
 
 
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+        >
             <header>
                 <nav className="navbar">
                     <a
@@ -98,7 +104,7 @@ const Discoteca = () => {
                 <br /><br /><br /><br /><br />
             </main>
             <FooterLayout />
-        </div>
+        </motion.div>
 
     )
 }

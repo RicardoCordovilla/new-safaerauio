@@ -3,10 +3,16 @@ import FooterLayout from '../layouts/FooterLayout'
 import ImagesTransition from '../components/reservas/form/ImagesTransition'
 import RegisterForm from '../layouts/forms/RegisterForm'
 import "../styles/safaera.css"
+import { motion } from 'framer-motion'
 
 const Safaera = () => {
     return (
-        <main>
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             <nav className="navbar">
                 <a href="/" className="navbarBtn_back" rel="noopener noreferrer nofollow">
                     <i className="bx bx-arrow-back"></i>
@@ -30,7 +36,7 @@ const Safaera = () => {
             <RegisterForm />
 
             <FooterLayout />
-        </main>
+        </motion.main>
     )
 }
 

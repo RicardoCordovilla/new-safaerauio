@@ -2,10 +2,16 @@ import React from 'react'
 import "../styles/global.css";
 import "../styles/home.style.css";
 import FooterLayout from '../layouts/FooterLayout';
+import { motion } from 'framer-motion'
 
 const Home = () => {
     return (
-        <main>
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+        >
             <div>
                 <main className="indexMain">
                     <p>Escoge la experiencia que deseas vivir</p>
@@ -13,7 +19,11 @@ const Home = () => {
                         <p className="description">
                             Si quieres fiesta extrema, bailar y saltar toda la noche:
                         </p>
-                        <figure className="indexFigureBx">
+                        <motion.figure className="indexFigureBx"
+                            initial={{ opacity: 1 }}
+                            exit={{ opacity: 0.7, scale: 1.5, y: -100 }}
+                            transition={{ duration: 0.5 }}
+                        >
                             <a href="#/safaera">
                                 <img
                                     src="/images/logos/safaera_logo.png"
@@ -21,7 +31,7 @@ const Home = () => {
                                     className="indexImg"
                                 />
                             </a>
-                        </figure>
+                        </motion.figure>
                         <p>Jueves, Viernes y Sábado de 20h00 a 04h00</p>
                     </section>
 
@@ -50,7 +60,7 @@ const Home = () => {
                 <br />
             </div>
             <FooterLayout />
-        </main>
+        </motion.main>
 
 
     )

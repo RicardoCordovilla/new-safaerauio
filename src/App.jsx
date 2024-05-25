@@ -7,18 +7,38 @@ import Home from './pages/Home'
 import Safaera from './pages/Safaera'
 import Discoteca from './pages/Discoteca'
 import Confirmacion from './pages/Confirmacion'
+import { useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+
+const Animated=()=>{
+  const location = useLocation()
+  return (
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        <Route path='/' element={<Home />} />
+        <Route path='/safaera' element={<Safaera />} />
+        <Route path='/discoteca' element={<Discoteca />} />
+        <Route path='/confirmacion' element={<Confirmacion />} />
+      </Routes>
+    </AnimatePresence>
+  )
+}
+
 
 function App() {
+
 
   return (
     <div className='App'>
       <HashRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/safaera' element={<Safaera />} />
-          <Route path='/discoteca' element={<Discoteca />} />
-          <Route path='/confirmacion' element={<Confirmacion />} />
-        </Routes>
+        <Animated/>
+        
+        {/* <Routes location={location} key={location.pathname}> */}
+          {/* <Route path='/' element={<Home />} /> */}
+          {/* <Route path='/safaera' element={<Safaera />} /> */}
+          {/* <Route path='/discoteca' element={<Discoteca />} /> */}
+          {/* <Route path='/confirmacion' element={<Confirmacion />} /> */}
+        {/* </Routes> */}
       </HashRouter>
 
     </div>

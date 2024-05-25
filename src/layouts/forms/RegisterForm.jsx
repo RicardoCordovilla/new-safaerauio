@@ -22,7 +22,7 @@ import axios from 'axios';
 
 const RegisterForm = () => {
     const defaultSelectedHour = 4
-    const [horas, setHoras] = useState([])
+    const [horas, setHoras] = useState(['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30'])
 
     // const [dataHours, loading, error, fetch] = useFetch()
 
@@ -62,7 +62,10 @@ const RegisterForm = () => {
 
     const getHoras = () =>
         axios.get(API_METHODS.configs.getConfigs.url)
-            .then(res => setHoras(res.data[0].data.horas))
+            .then(res => {
+                console.log(res.data[0].data.horas)
+                setHoras(res.data[0].data.horas)
+            })
             .catch(err => console.log(err))
 
     useEffect(() => {
