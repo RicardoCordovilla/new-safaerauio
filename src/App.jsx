@@ -6,21 +6,27 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Safaera from './pages/Safaera'
 import Discoteca from './pages/Discoteca'
-import Confirmacion from './pages/Confirmacion'
 import { useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+// import Confirmacion from './pages/conformacion.html'
 
-const Animated=()=>{
+const Animated = () => {
   const location = useLocation()
+
+  const RedirectConfirmacion = () => {
+    window.location.href = '/confirm.html'
+    return <></>
+  }
+
   return (
-    <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route path='/' element={<Home />} />
-        <Route path='/safaera' element={<Safaera />} />
-        <Route path='/discoteca' element={<Discoteca />} />
-        <Route path='/confirmacion' element={<Confirmacion />} />
-      </Routes>
-    </AnimatePresence>
+    // <AnimatePresence>
+    <Routes >
+      <Route path='/' element={<Home />} />
+      <Route path='/confirmacion' element={<RedirectConfirmacion />} />
+      <Route path='/safaera' element={<Safaera />} />
+      <Route path='/discoteca' element={<Discoteca />} />
+    </Routes>
+    // </AnimatePresence>
   )
 }
 
@@ -31,13 +37,13 @@ function App() {
   return (
     <div className='App'>
       <HashRouter>
-        <Animated/>
-        
+        <Animated />
+
         {/* <Routes location={location} key={location.pathname}> */}
-          {/* <Route path='/' element={<Home />} /> */}
-          {/* <Route path='/safaera' element={<Safaera />} /> */}
-          {/* <Route path='/discoteca' element={<Discoteca />} /> */}
-          {/* <Route path='/confirmacion' element={<Confirmacion />} /> */}
+        {/* <Route path='/' element={<Home />} /> */}
+        {/* <Route path='/safaera' element={<Safaera />} /> */}
+        {/* <Route path='/discoteca' element={<Discoteca />} /> */}
+        {/* <Route path='/confirmacion' element={<Confirmacion />} /> */}
         {/* </Routes> */}
       </HashRouter>
 
