@@ -10,8 +10,29 @@ import { useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 // import Confirmacion from './pages/conformacion.html'
 
-const Animated = () => {
-  const location = useLocation()
+// const Animated = () => {
+//   const location = useLocation()
+
+//   const RedirectConfirmacion = () => {
+//     window.location.href = '/confirm.html'
+//     return <></>
+//   }
+
+//   return (
+//     // <AnimatePresence>
+//     <Routes >
+//       <Route path='/' element={<Home />} />
+//       <Route path='/confirmacion' element={<RedirectConfirmacion />} />
+//       <Route path='/safaera' element={<Safaera />} />
+//       <Route path='/discoteca' element={<Discoteca />} />
+//     </Routes>
+//     // </AnimatePresence>
+//   )
+
+// }
+
+
+function App() {
 
   const RedirectConfirmacion = () => {
     window.location.href = '/confirm.html'
@@ -19,35 +40,17 @@ const Animated = () => {
   }
 
   return (
-    // <AnimatePresence>
-    <Routes >
-      <Route path='/' element={<Home />} />
-      <Route path='/confirmacion' element={<RedirectConfirmacion />} />
-      <Route path='/safaera' element={<Safaera />} />
-      <Route path='/discoteca' element={<Discoteca />} />
-    </Routes>
-    // </AnimatePresence>
-  )
-}
+    // <div className='App'>
+    <HashRouter>
+      <Routes >
+        <Route path='/' element={<Home />} />
+        <Route path='/safaera' element={<Safaera />} />
+        <Route path='/discoteca' element={<Discoteca />} />
+        <Route path='/confirmacion' element={<RedirectConfirmacion />} />
+      </Routes>
+    </HashRouter>
 
-
-function App() {
-
-
-  return (
-    <div className='App'>
-      <HashRouter>
-        <Animated />
-
-        {/* <Routes location={location} key={location.pathname}> */}
-        {/* <Route path='/' element={<Home />} /> */}
-        {/* <Route path='/safaera' element={<Safaera />} /> */}
-        {/* <Route path='/discoteca' element={<Discoteca />} /> */}
-        {/* <Route path='/confirmacion' element={<Confirmacion />} /> */}
-        {/* </Routes> */}
-      </HashRouter>
-
-    </div>
+    // </div>
   )
 }
 
