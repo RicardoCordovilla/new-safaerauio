@@ -6,6 +6,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Safaera from './pages/Safaera'
 import Discoteca from './pages/Discoteca'
+import Confirmacion from './pages/Confirm'
 import { useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 // import Confirmacion from './pages/conformacion.html'
@@ -46,7 +47,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/safaera' element={<Safaera />} />
         <Route path='/discoteca' element={<Discoteca />} />
-        <Route path='/confirmacion' element={<RedirectConfirmacion />} />
+        <Route path='/confirmacion' element={<Confirmacion />} />
       </Routes>
     </HashRouter>
 

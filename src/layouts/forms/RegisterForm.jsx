@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import "primereact/resources/themes/viva-dark/theme.css"
 import 'primeicons/primeicons.css';
 import Swal from 'sweetalert2'
@@ -118,34 +118,6 @@ const RegisterForm = () => {
     //     }
     // })
 
-    const isFormFieldInvalid = (name) => {
-
-    }
-    // !!(formik.touched[name] && formik.errors[name])
-
-    const getFormErrorMessage = (name) => {
-        return isFormFieldInvalid(name) &&
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'left',
-                }}
-            >
-                <small className="p-error"
-                    style={{
-                        position: 'relative',
-                        // left: '0.2rem',
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                        alignSelf: 'left',
-                        justifySelf: 'left',
-                        padding: '0.2rem 0.5rem',
-                        borderRadius: '0 0 0.3rem 0.3rem',
-                        textShadow: 'none'
-
-                    }}
-                >{formik.errors[name]}</small>
-            </div>
-    }
 
 
     const handleTicket = () => {
