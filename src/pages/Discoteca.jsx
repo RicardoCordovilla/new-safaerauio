@@ -11,13 +11,14 @@ const Discoteca = () => {
 
     const [wts, setWts] = useState('')
     const [wtss, setWtss] = useState('')
-    const [drive1, setDrive1] = useState('')
+    const [drive1, setDrive1] = useState('https://drive.google.com/file/d/1pAGBi72aeRiF3IM8uX0QiEpaqnRzvHRF/view')
 
     const getConfigs = () => {
         axios.request(
             API_METHODS.configs.getConfigs
         )
             .then((response) => {
+                console.log(response.data)
                 const data = response.data[0].data
                 console.log(data)
                 // const wtss = "593" + wts.substring(1, 12);
