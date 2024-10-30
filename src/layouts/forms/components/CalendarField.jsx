@@ -33,7 +33,7 @@ const CalendarField = ({ fecha, setFecha }) => {
         const response = data && data[0].data
         if (!data) return
         // console.log(response?.calendar)
-        setEnabledDays(response?.weekdays)
+        // setEnabledDays(response?.weekdays)
         console.log(response?.weekdays)
         setDisabledDates([...disabledDates, new Date(response?.calendar.disable)])
         setEnabledDates([...enabledDates, new Date(response?.calendar.enable)])
