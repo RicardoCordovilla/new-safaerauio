@@ -88,6 +88,7 @@ const CalendarField = ({ fecha, setFecha }) => {
                 // disabledDates={disabledDates}
                 dateTemplate={dateTemplate}
                 disabled={loding}
+                disabledDays={[0,1,2,3]}
                 // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
 
             />
