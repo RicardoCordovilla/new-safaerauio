@@ -29,15 +29,15 @@ const CalendarField = ({ fecha, setFecha }) => {
     }, [])
 
 
-    // useEffect(() => {
-    //     const response = data && data[0].data
-    //     if (!data) return
-    //     // console.log(response?.calendar)
-    //     setEnabledDays([4,5,6])
-    //     // console.log(response?.weekdays)
-    //     setDisabledDates([...disabledDates, new Date(response?.calendar.disable)])
-    //     setEnabledDates([...enabledDates, new Date(response?.calendar.enable)])
-    // }, [data])
+    useEffect(() => {
+        const response = data && data[0].data
+        if (!data) return
+        // console.log(response?.calendar)
+        // setEnabledDays([4,5,6])
+        // console.log(response?.weekdays)
+        setDisabledDates([...disabledDates, new Date(response?.calendar.disable)])
+        setEnabledDates([...enabledDates, new Date(response?.calendar.enable)])
+    }, [data])
 
 
 
