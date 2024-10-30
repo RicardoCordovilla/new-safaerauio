@@ -84,9 +84,6 @@ const CalendarField = ({ fecha, setFecha }) => {
                 dateFormat="dd/mm/yy"
                 placeholder="Fecha de tu reserva"
                 minDate={new Date()}
-                disabledDays={
-                    [0, 1, 2, 3, 4, 5, 6].filter((day) => !enabledDays.includes(day))
-                }
                 // enabledDates={enabledDates}
                 // disabledDates={disabledDates}
                 dateTemplate={dateTemplate}
