@@ -5,7 +5,7 @@ export const API_METHODS = {
     configs: {
         getConfigs: {
             method: "GET",
-            url: API_URL + "configs/1"
+            url: API_URL + "configs"
         },
     },
     reservas: {
