@@ -19,13 +19,8 @@ export { Calendar };
 const CalendarField = ({ fecha, setFecha }) => {
 
     const [data, loding, error, fetch] = useFetch()
-<<<<<<< HEAD
     // const [disabledDays, setDisabledDays] = useState([])
     const [enabledDays, setEnabledDays] = useState([3, 4, 5, 6])
-=======
-    const [disabledDays, setDisabledDays] = useState([])
-    const [enabledDays, setEnabledDays] = useState([4,5,6])
->>>>>>> 235807a879d8d2405e00fcd5124476e8b4b38d12
     const [enabledDates, setEnabledDates] = useState([])
     const [disabledDates, setDisabledDates] = useState([])
 
