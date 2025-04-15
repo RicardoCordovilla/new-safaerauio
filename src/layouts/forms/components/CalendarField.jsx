@@ -76,7 +76,6 @@ const CalendarField = ({ fecha, setFecha }) => {
     return (
         <div className="flex justify-content-center">
             <Calendar id="fecha"
-                // locale="es"
                 value={fecha}
                 onChange={(e) => setFecha(e.value)}
                 className="p-inputtext-lg"
@@ -84,17 +83,10 @@ const CalendarField = ({ fecha, setFecha }) => {
                 dateFormat="dd/mm/yy"
                 placeholder="Fecha de tu reserva"
                 minDate={new Date()}
-                // enabledDates={enabledDates}
-                // disabledDates={disabledDates}
                 dateTemplate={dateTemplate}
                 disabled={loding}
-<<<<<<< HEAD
+                disabledDays={[0, 1, 2]}
             // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
-=======
-                disabledDays={[0,1,2,3]}
-                // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
->>>>>>> 235807a879d8d2405e00fcd5124476e8b4b38d12
-
             />
             {/* {getFormErrorMessage('fecha')} */}
         </div>
