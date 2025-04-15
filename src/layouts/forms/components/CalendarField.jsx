@@ -19,8 +19,13 @@ export { Calendar };
 const CalendarField = ({ fecha, setFecha }) => {
 
     const [data, loding, error, fetch] = useFetch()
+<<<<<<< HEAD
     // const [disabledDays, setDisabledDays] = useState([])
     const [enabledDays, setEnabledDays] = useState([3, 4, 5, 6])
+=======
+    const [disabledDays, setDisabledDays] = useState([])
+    const [enabledDays, setEnabledDays] = useState([4,5,6])
+>>>>>>> 235807a879d8d2405e00fcd5124476e8b4b38d12
     const [enabledDates, setEnabledDates] = useState([])
     const [disabledDates, setDisabledDates] = useState([])
 
@@ -84,14 +89,16 @@ const CalendarField = ({ fecha, setFecha }) => {
                 dateFormat="dd/mm/yy"
                 placeholder="Fecha de tu reserva"
                 minDate={new Date()}
-                disabledDays={
-                    [0, 1, 2, 3, 4, 5, 6].filter((day) => !enabledDays.includes(day))
-                }
                 // enabledDates={enabledDates}
                 // disabledDates={disabledDates}
                 dateTemplate={dateTemplate}
                 disabled={loding}
+<<<<<<< HEAD
             // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
+=======
+                disabledDays={[0,1,2,3]}
+                // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
+>>>>>>> 235807a879d8d2405e00fcd5124476e8b4b38d12
 
             />
             {/* {getFormErrorMessage('fecha')} */}
