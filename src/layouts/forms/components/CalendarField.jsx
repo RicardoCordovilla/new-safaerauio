@@ -20,7 +20,7 @@ const CalendarField = ({ fecha, setFecha }) => {
 
     const [data, loding, error, fetch] = useFetch()
     // const [disabledDays, setDisabledDays] = useState([])
-    const [enabledDays, setEnabledDays] = useState([4,5,6])
+    const [enabledDays, setEnabledDays] = useState([3, 4, 5, 6])
     const [enabledDates, setEnabledDates] = useState([])
     const [disabledDates, setDisabledDates] = useState([])
 
@@ -33,7 +33,7 @@ const CalendarField = ({ fecha, setFecha }) => {
         const response = data && data[0].data
         if (!data) return
         // console.log(response?.calendar)
-        setEnabledDays(response?.weekdays)
+        // setEnabledDays(response?.weekdays)
         console.log(response?.weekdays)
         setDisabledDates([...disabledDates, new Date(response?.calendar.disable)])
         setEnabledDates([...enabledDates, new Date(response?.calendar.enable)])
@@ -91,7 +91,7 @@ const CalendarField = ({ fecha, setFecha }) => {
                 // disabledDates={disabledDates}
                 dateTemplate={dateTemplate}
                 disabled={loding}
-                // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
+            // maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)}
 
             />
             {/* {getFormErrorMessage('fecha')} */}
